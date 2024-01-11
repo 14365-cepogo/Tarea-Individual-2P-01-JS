@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>MENU 1</title>
+    <style type="text/css">
+        #background{position:absolute; width:99%; height:130%;}
+        #fixed {position:absolute; top: 0px; left: 0px;}
+    </style>
+</head>
+<body>
+    <div>
+        <img id="background" src="../img/fondo.jpg"/> 
+    </div>
+    <div id="fixed">
+        </br></br></br>
+        <div style="padding-left:510px;">
+            <img src="../img/selloespe.jpg" alt="ESPE" height="100" >
+        </div>
+        <div style="padding-left:395px;">
+            <h2>
+                <p style="text-align: center" style="color:#165014" ;>DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN</p>
+                <p style="text-align: center" style="color:#165014" ;>INGENIERÍA EN TECNOLOGIAS</p>
+            </h2>
+            <h3>
+                <p style="text-align: center" style="color:#165014" ;>APLICACIONES DE TECNOLOGIAS WEB - PHP BASICO</p>
+            </h3>
+        </div>
+        <div style="padding-left:90px;">
+            <h4><p style="color:#1f1450";>Integrante: Carlos Pogo</p></h4>
+            <h4><p style="color:#1f1450";>NRC: 14365</p></h4>
+            <h4><p style="color:#1f1450";>Fecha: 09/01/2024</p></h4>
+        </div>
+        <div style="padding-left:250px;">
+            <button><a href="../html/menu2.html">Regresar</a></button>
+        </div>
+        <div style="padding-left:250px;">
+          <h3>
+            <p style="text-align: center" style="color:#165014" ;>EXPRESION MATEMATICA</p>
+            <p style="text-align: center">A + B * C - D</p>
+          </h3>
+        </div>    
+        <div style="padding-left:250px;">
+            <form id="expresionForm">
+                <br> <br>
+                <input type="number" name="numero1" id="numero1" min="1" max="50"> &nbsp; A <br><br>
+
+                <input type="number" name="numero2" id="numero2" min="1" max="50"> &nbsp; B <br><br>
+
+                <input type="number" name="numero3" id="numero3" min="1" max="50"> &nbsp; C <br><br>
+
+                <input type="number" name="numero4" id="numero4" min="1" max="50"> &nbsp; D <br><br>
+
+                <input type="button" value="Calcular" onclick="calcularExpresion()">
+            </form>
+        </div>
+        <div style="padding-left:250px;" id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularExpresion() {
+            var A = parseInt(document.getElementById("numero1").value);
+            var B = parseInt(document.getElementById("numero2").value);
+            var C = parseInt(document.getElementById("numero3").value);
+            var D = parseInt(document.getElementById("numero4").value);
+
+            if (isNaN(A) || isNaN(B) || isNaN(C) || isNaN(D)) {
+                alert("Por favor, ingrese números válidos.");
+                return;
+            }
+
+            var resultado = A + B * C - D;
+
+            document.getElementById("resultado").innerHTML = "<p>Resultado: " + resultado + "</p>";
+        }
+    </script>
+</body>
+</html>

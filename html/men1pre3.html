@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>MENU 1</title>
+    <style type="text/css">
+        #background{position:absolute; width:99%; height:130%;}
+        #fixed {position:absolute; top: 0px; left: 0px;}
+    </style>
+</head>
+<body>
+    <div>
+        <img id="background" src="../img/fondo.jpg"/> 
+    </div>
+    <div id="fixed">
+        </br></br></br>
+        <div style="padding-left:510px;">
+            <img src="../img/selloespe.jpg" alt="ESPE" height="100" >
+        </div>
+        <div style="padding-left:395px;">
+            <h2>
+                <p style="text-align: center" style="color:#165014";>DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN</p>
+                <p style="text-align: center" style="color:#165014";>INGENIERÍA EN TECNOLOGIAS</p>
+            </h2>
+            <h3>
+                <p style="text-align: center" style="color:#165014";>APLICACIONES DE TECNOLOGIAS WEB - PHP BASICO</p>
+            </h3>
+        </div>
+        <div style="padding-left:90px;">
+            <h4><p style="color:#1f1450;">Integrante: Carlos Pogo</p></h4>
+            <h4><p style="color:#1f1450;">NRC: 14365</p></h4>
+            <h4><p style="color:#1f1450;">Fecha: 09/01/2024</p></h4>
+        </div>
+        <div style="padding-left:250px;">
+            <button><a href="./menu1.html">Regresar</a></button>
+        </div>
+        <div style="padding-left:250px;">
+          <h3>
+            <p style="text-align: center" style="color:#165014";>SERIE MATEMATICA</p>
+          </h3>
+        </div>    
+        <div style="padding-left:250px;">
+            <form onsubmit="return calcularSerie()">
+                <label for="numero">Ingrese un numero para calcular la serie matematica: </label>
+                <input type="number" name="numero" id="numero">
+                <input type="submit" value="Calcular">
+            </form>
+            <div id="resultadoSerie"></div>
+        </div>
+    </div>
+
+    <script>
+        function calcularSerie() {
+            var numeroInput = document.getElementById("numero");
+            var numero = parseInt(numeroInput.value);
+
+            if (isNaN(numero) || numero < 0) {
+                alert("Por favor, ingrese un número entero no negativo.");
+                return false;
+            }
+
+            mostrarSerie(numero);
+            return false; // Prevent form submission
+        }
+
+        function mostrarSerie(numero) {
+            var resultadoSerieDiv = document.getElementById("resultadoSerie");
+            var resultado = 0;
+
+            for (var i = 1; i <= numero; i++) {
+                resultado += 1 / i;
+            }
+
+            resultadoSerieDiv.innerHTML = "<p>La serie matemática para " + numero + " es: " + resultado.toFixed(4) + "</p>";
+        }
+    </script>
+</body>
+</html>
